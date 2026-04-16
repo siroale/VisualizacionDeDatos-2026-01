@@ -12,7 +12,7 @@ years = df_year_filter["year"].values
 suicides_no = df_year_filter["suicides_no"].values
 
 fig, ax = plt.subplots(figsize=(12, 3))
-cmap = plt.cm.inferno 
+cmap = plt.cm.Reds
 norm = Normalize(vmin=suicides_no.min(), vmax=suicides_no.max())
 
 for i in range(len(years)):
