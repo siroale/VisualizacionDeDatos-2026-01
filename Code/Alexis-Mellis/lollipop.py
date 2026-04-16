@@ -15,7 +15,7 @@ colors = plt.cm.Reds(y / y.max())
 
 ax.vlines(x=x, ymin=0, ymax=y, color="gray", alpha=0.6, linewidth=2)
 ax.scatter(x, y, color=colors, s=120, zorder=3, edgecolor="black", alpha=0.9)
-ax.set_title("Evolución de la Cantidad de Suicidios en Chile (1985 - 2015)\n", fontsize=16, pad=20)
+ax.set_title("Evolución de la Cantidad de Suicidios en Chile (1985 - 2015)\n", fontsize=16, pad=20, fontweight="bold")
 ax.set_xlabel("Año", fontsize=12)
 ax.set_ylabel("Cantidad Total de Suicidios", fontsize=12)
 
