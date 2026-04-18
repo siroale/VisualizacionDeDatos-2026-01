@@ -1,7 +1,7 @@
 # Fuente de Datos: Tasas de Suicidio y Factores Socioeconómicos Globales (1985 - 2016)
 
 ## Origen
-* **Plataforma:** [Kaggle - Suicide Rates Overview 1985 to 2021](https://www.kaggle.com/datasets/russellyates88/suicide-rates-overview-1985-to-2016)
+* **Plataforma:** [Kaggle - Suicide Rates Overview 1985 to 2016](https://www.kaggle.com/datasets/russellyates88/suicide-rates-overview-1985-to-2016)
 * **Autores/Recopiladores Originales:** Este dataset es un compilado estructurado (mashup) construido a partir de cuatro fuentes globales oficiales: el Programa de las Naciones Unidas para el Desarrollo (UN), el Banco Mundial (World Bank), la Organización Mundial de la Salud (OMS) y la base de datos de Szamil sobre suicidios en el siglo XXI.
 
 ## Descripción

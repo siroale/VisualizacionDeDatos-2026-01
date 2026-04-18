@@ -4,15 +4,14 @@ import numpy as np
 from matplotlib.colors import Normalize
 
 df = pd.read_csv("Datasets/suicide_dataset.csv")
-df_chile = df[df["country"] == "Chile"]
-df_year_filter = df_chile.groupby("year")["suicides_no"].sum().reset_index()
+df_year_filter = df.groupby("year")["suicides_no"].sum().reset_index()
 df_year_filter = df_year_filter[df_year_filter["year"] <= 2015].sort_values("year")
 
 years = df_year_filter["year"].values
 suicides_no = df_year_filter["suicides_no"].values
 
 fig, ax = plt.subplots(figsize=(12, 3))
-cmap = plt.cm.bone_r
+cmap = plt.cm.Reds
 norm = Normalize(vmin=suicides_no.min(), vmax=suicides_no.max())
 
 for i in range(len(years)):
@@ -33,7 +32,7 @@ cbar = fig.colorbar(sm, ax=ax, orientation="horizontal", fraction=0.15, pad=0.2,
 cbar.set_label("Cantidad Total de Suicidios", fontsize=11, fontweight="bold")
 cbar.outline.set_visible(False)
 
-plt.title("Evolución de la Cantidad de Suicidios en Chile (1985 - 2015)", fontsize=16, fontweight="bold")
+plt.title("Evolución de la Cantidad Global de Suicidios (1985 - 2015)", fontsize=16, fontweight="bold")
 plt.tight_layout()
-plt.savefig("Code/Alexis-Mellis/barcode_chile_cantidad_suicidios.png", dpi=300, bbox_inches="tight")
+plt.savefig("Informe/figures/figure001.png", dpi=300, bbox_inches="tight")
 plt.show()
