@@ -19,12 +19,19 @@
 \usepackage{lmodern}
 \usepackage{microtype}
 \usepackage{csquotes}
+\usepackage{listings}
+\lstset{
+  literate={á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1
+           {Á}{{\'A}}1 {É}{{\'E}}1 {Í}{{\'I}}1 {Ó}{{\'O}}1 {Ú}{{\'U}}1
+           {ñ}{{\~n}}1 {Ñ}{{\~N}}1 {ü}{{\"u}}1 {Ü}{{\"U}}1
+}
 
 % ── Geometría ─────────────────────────────────────────────────────────────────
 \geometry{
   top=2.5cm, bottom=2.5cm,
   left=2.5cm, right=2.5cm
 }
+\setlength{\headheight}{13.6pt}
 
 % ── Hyperref ──────────────────────────────────────────────────────────────────
 \hypersetup{
@@ -189,7 +196,7 @@ evidenciar quiénes son los más vulnerables en cada periodo.
 \end{itemize}
 
 % ─────────────────────────────────────────────────────────────────────────────
-\section{Trabajo individual -- Integrante 2: NOMBRE}
+\section{Trabajo individual -- Integrante 2: Andrés Águila}
 
 \subsection{Criterios seleccionados}
 
@@ -206,10 +213,9 @@ evidenciar quiénes son los más vulnerables en cada periodo.
 
 \begin{figure}[H]
   \centering
-  % \includegraphics[width=0.85\textwidth]{figures/integrante2_grafico1.png}
-  \fbox{\rule{0pt}{5cm}\rule{0.85\textwidth}{0pt}} % Placeholder
-  \caption{[Título descriptivo del gráfico]. Fuente: Kaggle -- Suicide Rates Overview 1985--2016.}
-  \label{fig:int2_g1}
+  \includegraphics[width=0.85\textwidth]{figures/figure003.png}
+  \caption{Evolución de la Cantidad Global de Suicidios (1985 - 2015). Fuente: Kaggle -- Suicide Rates Overview 1985--2016.}
+  \label{fig:figure003}
 \end{figure}
 
 \subsubsection*{Conclusiones}
@@ -220,10 +226,9 @@ evidenciar quiénes son los más vulnerables en cada periodo.
 
 \begin{figure}[H]
   \centering
-  % \includegraphics[width=0.85\textwidth]{figures/integrante2_grafico2.png}
-  \fbox{\rule{0pt}{5cm}\rule{0.85\textwidth}{0pt}} % Placeholder
-  \caption{[Título descriptivo del gráfico]. Fuente: Kaggle -- Suicide Rates Overview 1985--2016.}
-  \label{fig:int2_g2}
+  \includegraphics[width=0.85\textwidth]{figures/figure004.png}
+  \caption{Evolución de la Cantidad Global de Suicidios (1985 - 2015). Fuente: Kaggle -- Suicide Rates Overview 1985--2016.}
+  \label{fig:figure004}
 \end{figure}
 
 \subsubsection*{Conclusiones}
@@ -235,14 +240,33 @@ evidenciar quiénes son los más vulnerables en cada periodo.
 
 \subsection{Prompt utilizado}
 
-\begin{quote}
-  \ttfamily
-  [Pegar aquí el prompt exacto que se le entregó a la herramienta de IA.]
-\end{quote}
+\begin{lstlisting}[basicstyle=\small\ttfamily, breaklines=true, frame=single, mathescape=false]
+Actúa como un periodista de datos y experto en visualización en Python. Cuento con un dataset sobre suicidios a nivel mundial (guardado localmente como 'suicide_dataset.csv') con las siguientes variables: country, year, sex, age, suicides_no, population, suicides/100k pop, HDI for year, gdp_per_capita ($). En caso de necesitar información original, el dataset se puede encontrar en: https://www.kaggle.com/datasets/russellyates88/suicide-rates-overview-1985-to-2016
+
+Nuestro informe de investigación sigue este hilo conductor:
+
+- Criterio A: Evolución de la cantidad global de suicidios (Gráfico de código de barras).
+
+- Criterio B: Distribución etaria a lo largo del tiempo (Streamline plot).
+
+- Criterio C: Brecha de género en tasas de suicidio (Dumbbell plot).
+
+- Criterio D: Evolución de las tasas en los 15 países de mayor incidencia (Heatmap).
+
+Eres el encargado de diseñar y programar el Criterio E (Visualización Grupal). Este criterio debe cerrar el hilo conductor evaluando la relación entre el nivel económico/desarrollo de los países (usando gdp_per_capita o HDI) y sus tasas de suicidio (suicides/100k pop).
+
+Reglas estrictas:
+
+- Prohibido usar gráficos de uso común (barras, dispersión, líneas, torta, etc.) y prohibido repetir los gráficos ya mencionados (código de barras, streamline, dumbbell, heatmap). Propón un gráfico estadístico avanzado y poco común.
+
+- Escribe el código en Python (pandas, matplotlib, seaborn, u otras librerías necesarias) para generar el gráfico. Asume que el archivo 'suicide_dataset.csv' está en el mismo directorio. El código no debe tener emojis y debe tener comentarios mínimos.
+
+- Redacta la justificación metodológica de este criterio y 3 conclusiones periodísticas clave a partir de esta visualización para incluirlas en el informe formal.
+\end{lstlisting}
 
 \subsection{Herramienta utilizada}
 
-[Indicar la herramienta de IA generativa usada, e.g., ChatGPT, GitHub Copilot, Claude, etc.]
+Se utilizó un modelo agéntico impulsado por Claude Opus 4.6 (Thinking) via Antigravity. Una vez recibido el prompt, el agente desarrolló su propio código en python y generó la visualización. A partir de esta realizó su propio análisis y conclusiones, los cuales se detallan en la siguiente sección.
 
 \subsection{Código generado}
 
@@ -256,13 +280,12 @@ indicar que no fue necesario modificar nada.]
 
 \subsection{Visualización grupal}
 
+
 \begin{figure}[H]
   \centering
-  % \includegraphics[width=0.85\textwidth]{figures/grupal_ia.png}
-  \fbox{\rule{0pt}{5cm}\rule{0.85\textwidth}{0pt}} % Placeholder
-  \caption{[Título descriptivo]. Generado con IA generativa. Fuente de datos: Kaggle -- Suicide
-           Rates Overview 1985--2016.}
-  \label{fig:grupal_ia}
+  \includegraphics[width=0.85\textwidth]{figures/figure005.png}
+  \caption{Evolución de la Cantidad Global de Suicidios (1985 - 2015). Fuente: Kaggle -- Suicide Rates Overview 1985--2016.}
+  \label{fig:figure005}
 \end{figure}
 
 \subsubsection*{Conclusiones}
@@ -298,15 +321,5 @@ La estructura del repositorio es la siguiente:
 \end{verbatim}
 
 % ─────────────────────────────────────────────────────────────────────────────
-\section*{Responsabilidad individual}
-\addcontentsline{toc}{section}{Responsabilidad individual}
-
-\begin{description}
-  \item[NOMBRE Integrante 1:] Criterios A y B de la sección 3; Visualizaciones 1 y 2; commit(s):
-        \href{https://github.com/USUARIO/REPOSITORIO/commits/main}{\texttt{ver commits}}.
-  \item[NOMBRE Integrante 2:] Criterios A y B de la sección 4; Visualizaciones 3 y 4; commit(s):
-        \href{https://github.com/USUARIO/REPOSITORIO/commits/main}{\texttt{ver commits}}.
-  \item[Ambos:] Visualización grupal con IA (sección 5); redacción de conclusiones generales.
-\end{description}
 
 \end{document}
