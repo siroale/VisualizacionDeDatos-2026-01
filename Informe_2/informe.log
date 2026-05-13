@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.4.11)  12 MAY 2026 23:22
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.4.11)  12 MAY 2026 23:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -629,10 +629,17 @@ been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.95 \newpage
-              [1] [2] [3]
+              [1]
+<figures/figure002.png, id=131, 1392.70313pt x 678.28406pt>
+File: figures/figure002.png Graphic file (type png)
+<use figures/figure002.png>
+Package pdftex.def Info: figures/figure002.png  used on input line 157.
+(pdftex.def)             Requested size: 330.42041pt x 160.91818pt.
+ [2] [3 <./figures/figure002.png>] [4]
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 2
-45.
- (/usr/share/texmf/tex/latex/lm/t1lmtt.fd
+82.
+
+(/usr/share/texmf/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 Package microtype Info: Loading generic protrusion settings for font family
@@ -640,17 +647,17 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 246.
+(Font)              <10.95> on input line 283.
 
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2023/02/27 1.9 listings language file
 )
-<figures/figure001.png, id=155, 219.06844pt x 218.31563pt>
+<figures/figure001.png, id=161, 219.06844pt x 218.31563pt>
 File: figures/figure001.png Graphic file (type png)
 <use figures/figure001.png>
-Package pdftex.def Info: figures/figure001.png  used on input line 263.
+Package pdftex.def Info: figures/figure001.png  used on input line 300.
 (pdftex.def)             Requested size: 401.22942pt x 399.8601pt.
- [4] [5 <./figures/figure001.png>] [6] (./informe.aux
+ [5] [6 <./figures/figure001.png>] [7] (./informe.aux
 LaTeX Info: Redefining \. on input line 11.
 LaTeX Info: Redefining \% on input line 11.
 )
@@ -659,24 +666,24 @@ LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
  ***********
 Package rerunfilecheck Info: File `informe.out' has not changed.
-(rerunfilecheck)             Checksum: FEDCE8EA96E034974E27EA9CE2553425;4245.
+(rerunfilecheck)             Checksum: 02BE9F3BD13D4EFD894BCAACDEB6EDD2;4104.
  ) 
 Here is how much of TeX's memory you used:
- 17867 strings out of 476047
- 284607 string characters out of 5792075
+ 17890 strings out of 476047
+ 284958 string characters out of 5792075
  1954975 words of memory out of 5000000
- 39578 multiletter control sequences out of 15000+600000
- 608302 words of font info for 91 fonts, out of 8000000 for 9000
+ 39585 multiletter control sequences out of 15000+600000
+ 608860 words of font info for 97 fonts, out of 8000000 for 9000
  85 hyphenation exceptions out of 8191
  75i,12n,79p,1136b,1295s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/ty
 pe1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr
 /share/texmf/fonts/type1/public/lm/lmri12.pfb></usr/share/texmf/fonts/type1/pub
 lic/lm/lmtt10.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt12.pfb>
-Output written on informe.pdf (7 pages, 317058 bytes).
+Output written on informe.pdf (8 pages, 382769 bytes).
 PDF statistics:
- 220 PDF objects out of 1000 (max. 8388607)
- 195 compressed objects within 2 object streams
- 46 named destinations out of 1000 (max. 500000)
- 29894 words of extra memory for PDF output out of 35830 (max. 10000000)
+ 226 PDF objects out of 1000 (max. 8388607)
+ 198 compressed objects within 2 object streams
+ 50 named destinations out of 1000 (max. 500000)
+ 29891 words of extra memory for PDF output out of 35830 (max. 10000000)
 
