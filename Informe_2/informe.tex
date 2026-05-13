@@ -21,9 +21,9 @@
 \usepackage{csquotes}
 \usepackage{listings}
 \lstset{
-  literate={á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1
-           {Á}{{\'A}}1 {É}{{\'E}}1 {Í}{{\'I}}1 {Ó}{{\'O}}1 {Ú}{{\'U}}1
-           {ñ}{{\~n}}1 {Ñ}{{\~N}}1 {ü}{{\"u}}1 {Ü}{{\"U}}1
+  literate={á}{{\\'a}}1 {é}{{\\'e}}1 {í}{{\\'i}}1 {ó}{{\\'o}}1 {ú}{{\\'u}}1
+           {Á}{{\\'A}}1 {É}{{\\'E}}1 {Í}{{\\'I}}1 {Ó}{{\\'O}}1 {Ú}{{\\'U}}1
+           {ñ}{{\~n}}1 {Ñ}{{\~N}}1 {ü}{{\\"u}}1 {Ü}{{\\"U}}1
 }
 
 % ── Geometría ─────────────────────────────────────────────────────────────────
@@ -97,42 +97,43 @@
 % ─────────────────────────────────────────────────────────────────────────────
 \section{Introducción}
 
-% TODO: Escribir introducción de la tarea 2. Contexto de la encuesta,
-%       tema abordado y estructura del informe.
+El presente informe corresponde a la Tarea~2 del curso de Visualización de Datos y continúa el análisis del macrotema \textbf{Muerte}, con foco en las tasas de suicidio a nivel mundial. A diferencia de la primera entrega, en esta ocasión se incorpora una encuesta propia cuyo propósito es confrontar las percepciones populares con los indicadores que arroja la evidencia estadística.
+
+La encuesta fue diseñada en torno a cuatro dimensiones clave del fenómeno: la relación entre riqueza nacional y tasas de suicidio, el grupo etario de mayor riesgo, la proporción de mujeres en los suicidios globales y la evolución temporal de las tasas. Los resultados se contrastan con la realidad del dataset mediante visualizaciones no convencionales que ponen en evidencia la distancia entre lo que la gente cree y lo que los datos muestran.
 
 % ─────────────────────────────────────────────────────────────────────────────
 \section{Encuesta}
 
 \subsection{Descripción y preguntas}
 
-% TODO: Describir brevemente la encuesta (plataforma usada, tema,
-%       número de preguntas). Listar las preguntas aquí.
+La encuesta fue diseñada en Google Forms bajo el título \textit{``Percepciones sobre Tasas de Suicidio: Mitos vs.\ Realidad''}. Consta de 4 preguntas:
+
+\begin{enumerate}
+  \item \textbf{Relación riqueza--suicidio:} ¿Cómo cree que se relaciona la tasa de suicidios con el nivel de riqueza general de un país? (Se pregunta por nivel económico alto, medio y bajo, con opciones: Menor / Media / Mayor tasa de suicidio).
+  \item \textbf{Grupo etario más vulnerable:} Según su conocimiento general, ¿cuál de estos grupos de edad tiende a tener la tasa de suicidios más alta? (Opciones: 5--14, 15--24, 25--34, 35--54, 55--74, 75+ años).
+  \item \textbf{Proporción femenina:} Si tuviera que estimar, ¿cuál es el porcentaje de población que representan las mujeres en el total de suicidios a nivel global? (Escala numérica del 1 al 10, representando deciles).
+  \item \textbf{Tendencia temporal:} Si analizamos los datos a lo largo de las décadas, ¿cómo percibe el cambio en las tasas de suicidio a nivel mundial? (Opciones: Han aumentado significativamente / ligeramente / se han mantenido / han disminuido ligeramente / significativamente).
+\end{enumerate}
 
 \subsection{Difusión y respuestas obtenidas}
 
-% TODO: Indicar cómo se difundió la encuesta y cuántas respuestas se obtuvieron.
-%       Insertar pantallazo que demuestre las 20+ respuestas.
+La encuesta fue difundida entre estudiantes del curso y conocidos de los integrantes del equipo. Se obtuvieron un total de \textbf{20 respuestas}, cumpliendo con el mínimo requerido por el enunciado.
 
 \begin{figure}[H]
   \centering
-  % \includegraphics[width=0.7\textwidth]{figures/respuestas.png}
+  \includegraphics[width=0.7\textwidth]{figures/respuestas.png}
   \caption{Pantallazo del formulario mostrando el total de respuestas obtenidas.}
   \label{fig:respuestas}
 \end{figure}
 
-\subsection{Dataset generado}
-
-% TODO: Describir brevemente las variables del CSV descargado.
 
 % ─────────────────────────────────────────────────────────────────────────────
 \section{Infografía grupal}
 
-% TODO: Insertar la infografía grupal final.
-
 \begin{figure}[H]
   \centering
-  % \includegraphics[width=\textwidth]{figures/infografia.png}
-  \caption{Infografía grupal. Fuente: Encuesta propia, 2026.}
+  \includegraphics[width=\textwidth]{figures/infografia.png}
+  \caption{Infografía grupal: Mitos vs.\ Realidad sobre el suicidio a nivel mundial. Fuentes: Encuesta propia (2026) + Kaggle -- Suicide Rates Overview 1985--2016.}
   \label{fig:infografia}
 \end{figure}
 
@@ -142,46 +143,46 @@
 \subsection{Criterios seleccionados}
 
 \begin{enumerate}
-  \item \textbf{Criterio A:} % TODO
-  \item \textbf{Criterio B:} % TODO
+  \item \textbf{Criterio A:} Percepción del grupo etario más vulnerable vs.\ la distribución real de tasas por edad.
+  \item \textbf{Criterio B:} Percepción de la relación entre nivel económico y tasa de suicidio vs.\ la distribución real por tercil de PIB per cápita.
 \end{enumerate}
 
 \subsection{Justificación de los criterios}
 
-% TODO: Justificar por qué se eligieron estos criterios.
+El Criterio~A aborda uno de los mitos más arraigados en torno al suicidio: la creencia generalizada de que los jóvenes constituyen el grupo de mayor riesgo. Al contrastar esta percepción con los datos del dataset, se puede evidenciar visualmente el sesgo mediático que sobredimensiona el suicidio juvenil frente a las cifras reales, que señalan a las personas mayores como el segmento de mayor incidencia. El Criterio~B explora la relación entre riqueza y suicidio, un hallazgo que ya se documentó en la Tarea~1 con el Ridgeline Plot pero que aquí se valida desde la percepción de la población.
 
-\subsection{Visualización 1}
+\subsection{Visualización 1 -- Waffle Chart}
 
 \begin{figure}[H]
   \centering
-  % \includegraphics[width=0.85\textwidth]{figures/figure001.png}
-  \caption{TODO: título y fuente.}
-  \label{fig:figure001}
+  \includegraphics[width=0.95\textwidth]{figures/vis1_waffle.png}
+  \caption{Waffle Chart: Percepción del grupo etario más vulnerable vs.\ distribución real de tasas. Fuentes: Encuesta propia (2026) + Kaggle -- Suicide Rates Overview 1985--2016.}
+  \label{fig:vis1}
 \end{figure}
 
 \subsubsection*{Conclusiones}
 
 \begin{itemize}
-  \item % TODO
-  \item % TODO
-  \item % TODO
+  \item La percepción mayoritaria señala a los jóvenes de 15--24 años como el grupo más vulnerable (más del 50\% de las respuestas), cuando en realidad la tasa más alta corresponde a las personas de 75+ años (24,0 por 100k hab.). Se evidencia un fuerte sesgo mediático que invisibiliza el riesgo en la tercera edad.
+  \item En la realidad, la distribución de tasas por grupo etario es considerablemente más uniforme de lo que la gente cree. Mientras la percepción concentra casi todo el riesgo en dos franjas (15--24 y 25--34), la data muestra una distribución escalonada donde cada grupo etario superior presenta una tasa mayor.
+  \item Ningún encuestado seleccionó el grupo de 75+ años como el más vulnerable, a pesar de ser el que registra la incidencia más alta según los datos. Este hallazgo subraya la necesidad de visibilizar el suicidio en personas mayores, una población que queda fuera del relato mediático dominante.
 \end{itemize}
 
-\subsection{Visualización 2}
+\subsection{Visualización 2 -- Radar Chart}
 
 \begin{figure}[H]
   \centering
-  % \includegraphics[width=0.85\textwidth]{figures/figure002.png}
-  \caption{TODO: título y fuente.}
-  \label{fig:figure002}
+  \includegraphics[width=0.75\textwidth]{figures/vis2_radar.png}
+  \caption{Radar Chart: Percepción vs.\ realidad en la relación nivel económico--tasa de suicidio. Fuentes: Encuesta propia (2026) + Kaggle -- Suicide Rates Overview 1985--2016.}
+  \label{fig:vis2}
 \end{figure}
 
 \subsubsection*{Conclusiones}
 
 \begin{itemize}
-  \item % TODO
-  \item % TODO
-  \item % TODO
+  \item Existe una inversión notable entre percepción y realidad: la mayoría de los encuestados asocia los países de nivel económico bajo con las mayores tasas de suicidio, cuando la data muestra que los países con PIB per cápita más alto registran la tasa promedio más elevada (13,4/100k).
+  \item La realidad presenta una distribución relativamente uniforme entre los tres niveles económicos (13,4, 12,4 y 12,7 por 100k hab.), con diferencias de apenas 1 punto. En contraste, la percepción popular asigna diferencias drásticas, reflejando la asunción intuitiva, pero incorrecta, de que la pobreza es un factor de riesgo dominante.
+  \item Solo el 15\% de los encuestados percibió correctamente que los países de alto nivel económico presentan las mayores tasas, lo que confirma el hallazgo de la Tarea~1 sobre la ``paradoja de la riqueza'' y sugiere que este conocimiento contraintuitivo no ha permeado en la percepción general.
 \end{itemize}
 
 % ─────────────────────────────────────────────────────────────────────────────
@@ -190,46 +191,46 @@
 \subsection{Criterios seleccionados}
 
 \begin{enumerate}
-  \item \textbf{Criterio A:} % TODO
-  \item \textbf{Criterio B:} % TODO
+  \item \textbf{Criterio A:} Percepción del porcentaje femenino en el total de suicidios vs.\ la proporción real según el dataset.
+  \item \textbf{Criterio B:} Percepción de la tendencia temporal de las tasas de suicidio vs.\ la evolución real por décadas.
 \end{enumerate}
 
 \subsection{Justificación de los criterios}
 
-% TODO: Justificar por qué se eligieron estos criterios.
+El Criterio~A complementa el análisis de género iniciado en la Tarea~1 con el Dumbbell Plot. La pregunta busca cuantificar no solo \textit{si} la gente sabe que los hombres se suicidan más, sino \textit{cuánto} creen que es la proporción femenina, revelando la magnitud de la brecha entre percepción y realidad. El Criterio~B cierra el ciclo analítico evaluando la percepción sobre la evolución histórica de las tasas, que resulta particularmente reveladora al contrastarse con una tendencia real que la mayoría desconoce.
 
-\subsection{Visualización 3}
+\subsection{Visualización 3 -- Lollipop Chart Divergente}
 
 \begin{figure}[H]
   \centering
-  % \includegraphics[width=0.85\textwidth]{figures/figure003.png}
-  \caption{TODO: título y fuente.}
-  \label{fig:figure003}
+  \includegraphics[width=0.90\textwidth]{figures/vis3_lollipop.png}
+  \caption{Lollipop Divergente: Estimación individual del \% femenino en suicidios vs.\ realidad (23,1\%). Fuentes: Encuesta propia (2026) + Kaggle -- Suicide Rates Overview 1985--2016.}
+  \label{fig:vis3}
 \end{figure}
 
 \subsubsection*{Conclusiones}
 
 \begin{itemize}
-  \item % TODO
-  \item % TODO
-  \item % TODO
+  \item La realidad indica que las mujeres representan solo el 23,1\% del total de suicidios globales. Sin embargo, la media de las estimaciones fue de 42\% y la mediana de 40\%, lo que significa que en promedio los encuestados sobreestimaron la participación femenina en casi el doble de la cifra real.
+  \item De las 19 respuestas, 18 sobreestimaron el porcentaje femenino y solo 1 lo subestimó levemente. Esto revela un desconocimiento generalizado de la brecha de género en suicidios, donde los hombres representan el 77\% de los casos a nivel global.
+  \item Las sobreestimaciones más extremas llegaron al 70\%, más del triple de la cifra real. La gente tiende a asumir una distribución más equilibrada entre sexos de lo que los datos muestran, posiblemente influida por la creciente visibilización de la salud mental femenina en medios de comunicación.
 \end{itemize}
 
-\subsection{Visualización 4}
+\subsection{Visualización 4 -- Nightingale Rose Chart}
 
 \begin{figure}[H]
   \centering
-  % \includegraphics[width=0.85\textwidth]{figures/figure004.png}
-  \caption{TODO: título y fuente.}
-  \label{fig:figure004}
+  \includegraphics[width=0.75\textwidth]{figures/vis4_nightingale.png}
+  \caption{Nightingale Rose: Distribución de la percepción sobre la tendencia temporal de las tasas de suicidio. Fuentes: Encuesta propia (2026) + Kaggle -- Suicide Rates Overview 1985--2016.}
+  \label{fig:vis4}
 \end{figure}
 
 \subsubsection*{Conclusiones}
 
 \begin{itemize}
-  \item % TODO
-  \item % TODO
-  \item % TODO
+  \item La percepción dominante es que las tasas de suicidio han aumentado significativamente (12 de 19 respuestas, 63\%), seguida de ``aumento ligero'' (7 respuestas). En contraste, la realidad muestra una disminución del 7,4\% en la tasa promedio global entre la década de 1980 y la de 2010. Solo 1 persona (5\%) percibió correctamente una disminución.
+  \item Ningún encuestado eligió ``se han mantenido estables'' ni ``disminución significativa''. La cobertura mediática de casos individuales de suicidio y la creciente conversación pública sobre salud mental han generado una percepción de crisis creciente que no se corresponde con la tendencia estadística global.
+  \item La tasa promedio por década muestra un comportamiento de ``montaña'': subió de 12,1/100k (1980s) a 14,4/100k (1990s) para luego descender progresivamente hasta 11,2/100k (2010s). El pico de los 90s (asociado a la crisis post-soviética documentada en la Tarea 1) domina la memoria colectiva y distorsiona la percepción de la tendencia general a la baja.
 \end{itemize}
 
 % ─────────────────────────────────────────────────────────────────────────────
@@ -237,47 +238,120 @@
 
 \subsection{Herramienta utilizada}
 
-% TODO: Indicar la herramienta de IA utilizada (debe ser distinta a la Tarea 1,
-%       donde se usó Claude Opus 4.6 via Antigravity).
+Se utilizó \textbf{Gemini 3.1 Pro}. Una vez recibido el prompt, el agente desarrolló su propio código en Python y generó la visualización. A partir de esta, realizó su propio análisis y conclusiones. A modo de completitud, el código y el reporte generado por el modelo están disponibles en el repositorio.
 
 \subsection{Prompt utilizado}
 
 \begin{lstlisting}[basicstyle=\small\ttfamily, breaklines=true, frame=single]
-% TODO: Pegar aqui el prompt utilizado.
+Genera un Treemap en Python que muestre la discrepancia entre las
+respuestas de nuestra encuesta y los datos reales del dataset de
+suicidios (Kaggle). Para cada una de las 4 preguntas de la encuesta,
+calcula el porcentaje de encuestados que acertaron y colorea cada
+celda del treemap según su nivel de acierto (rojo = bajo, verde =
+alto). Usa squarify y matplotlib con fondo claro.
+
+Datos:
+- Encuesta: CSV con preguntas sobre relación riqueza-suicidio,
+  grupo etario más vulnerable, % mujeres, y tendencia temporal.
+- Dataset: 'suicide_dataset.csv' de Kaggle (1985-2016).
+
+Incluye una barra de gradiente como leyenda y las fuentes de datos.
 \end{lstlisting}
 
 \subsection{Código generado}
 
 \begin{lstlisting}[basicstyle=\small\ttfamily, breaklines=true, frame=single, language=Python]
-% TODO: Pegar aqui el código generado por la IA.
+import pandas as pd
+import matplotlib.pyplot as plt
+import squarify
+import numpy as np
+from matplotlib.colors import LinearSegmentedColormap
+
+survey = pd.read_csv('encuesta.csv')
+df = pd.read_csv('suicide_dataset.csv')
+
+# P1: Riqueza vs Suicidio
+col_alto = [c for c in survey.columns if 'Alto' in c][0]
+df['gdp_tercile'] = pd.qcut(df['gdp_per_capita ($)'], 3,
+                             labels=['Bajo','Medio','Alto'])
+p1_pct = (survey[col_alto] == 'Mayor Tasa de Suicidio'
+         ).sum() / len(survey) * 100
+
+# P2: Grupo Etario
+col_age = [c for c in survey.columns
+           if 'grupos de edad' in c.lower()][0]
+real_top = df.groupby('age')['suicides/100k pop'
+          ].mean().idxmax()
+# ... (mapeo y calculo de acierto)
+
+# P3: % Mujeres
+col_pct = [c for c in survey.columns
+           if 'mujeres' in c.lower()][0]
+real_f = (df[df.sex=='female'].suicides_no.sum()
+         / df.suicides_no.sum() * 100)
+estimates = survey[col_pct].astype(float) * 10
+p3_pct = ((estimates >= real_f-10)
+         & (estimates <= real_f+10)).sum()/len(survey)*100
+
+# P4: Tendencia Temporal
+# ... (calculo de cambio por decada)
+
+# Treemap
+sizes = [len(survey)] * 4
+def pct_to_color(p):
+    if p < 50: return (0.84, 0.15+p/50*0.45, 0.24)
+    return (0.84-(p-50)/50*0.75, 0.60+(p-50)/50*0.14,
+            0.19+(p-50)/50*0.55)
+
+fig, ax = plt.subplots(figsize=(14, 9))
+fig.patch.set_facecolor('#FAFAFA')
+squarify.plot(sizes=sizes,
+              color=[pct_to_color(p) for p in pcts],
+              alpha=0.85, ax=ax, edgecolor='#FAFAFA')
+# ... (anotaciones y formato)
+plt.savefig('vis5_treemap.png', dpi=200,
+            bbox_inches='tight', facecolor='#FAFAFA')
 \end{lstlisting}
 
 \subsection{Modificaciones realizadas}
 
-% TODO: Describir las modificaciones al código (si no hubo ninguna, indicarlo).
+No fue necesario realizar modificaciones sustanciales al código generado. El agente produjo un script funcional que generó la visualización correctamente. Se ajustaron únicamente los nombres de columna del CSV de la encuesta para que coincidieran con el formato de Google Forms.
 
 \subsection{Visualización grupal}
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.85\textwidth]{figures/figure001.png}
-  \caption{TODO: título y fuente.}
-  \label{fig:figure005}
+  \includegraphics[width=0.90\textwidth]{figures/vis5_treemap.png}
+  \caption{Treemap: Discrepancia entre percepción y realidad por pregunta de la encuesta. Fuentes: Encuesta propia (2026) + Kaggle -- Suicide Rates Overview 1985--2016.}
+  \label{fig:vis5}
 \end{figure}
 
 \subsubsection*{Conclusiones}
 
 \begin{itemize}
-  \item % TODO
-  \item % TODO
-  \item % TODO
+  \item El Treemap revela que en ninguna de las cuatro preguntas la mayoría de los encuestados acertó. El porcentaje de acierto oscila entre el 0\% (grupo etario) y el 30\% (porcentaje de mujeres), lo que evidencia un desconocimiento sistemático sobre la realidad del suicidio a nivel global.
+  \item La pregunta con menor acierto es la del grupo etario más vulnerable (0\%): ningún encuestado identificó correctamente a las personas de 75+ años como el grupo de mayor tasa. La gradación de color funciona como un indicador visual inmediato de la magnitud del desconocimiento.
+  \item Esta visualización sintetiza el mensaje central del informe: las percepciones populares sobre el suicidio están sistemáticamente distorsionadas. La data cuenta una historia muy diferente a la que la gente cree, y las cuatro dimensiones analizadas convergen en esa misma conclusión.
 \end{itemize}
 
 % ─────────────────────────────────────────────────────────────────────────────
 \section{Conclusiones generales}
 
-% TODO: Redactar conclusiones generales integrando los hallazgos
-%       de todas las visualizaciones.
+A lo largo de este segundo análisis, la confrontación entre percepciones populares y datos reales ha puesto de manifiesto patrones consistentes de desinformación sobre el suicidio. Los cuatro ejes analizados muestran que las creencias de la población están sistemáticamente alejadas de lo que la evidencia estadística indica.
+
+Los hallazgos más significativos son:
+
+\begin{enumerate}
+  \item \textbf{La riqueza no protege:} La gente asume que los países pobres sufren más, pero los datos muestran que los países con mayor PIB per cápita registran tasas ligeramente superiores. Solo el 15\% de los encuestados percibió esto correctamente.
+
+  \item \textbf{El suicidio en la tercera edad es invisible:} Ningún encuestado identificó a los mayores de 75 años como el grupo de mayor riesgo, a pesar de que su tasa (24/100k) es la más alta del dataset. La cobertura mediática centrada en jóvenes distorsiona completamente la percepción.
+
+  \item \textbf{La brecha de género se subestima:} La gente cree que las mujeres representan aproximadamente el 40\% de los suicidios, cuando la cifra real es del 23\%. La brecha real es mucho mayor de lo que el público imagina.
+
+  \item \textbf{Las tasas han bajado, no subido:} La totalidad de los encuestados cree que las tasas han aumentado, cuando en realidad han disminuido un 7,4\% entre los 1980s y los 2010s. La mayor visibilización mediática del tema ha generado una percepción de crisis creciente que no se corresponde con la tendencia estadística global.
+\end{enumerate}
+
+Estos resultados subrayan la importancia de la visualización de datos como herramienta para combatir mitos y desinformación. La data no solo cuenta una historia diferente a la que la gente cree: la cuenta de una manera que puede cambiar percepciones cuando se presenta de forma clara y accesible.
 
 % ─────────────────────────────────────────────────────────────────────────────
 \section{Repositorio de GitHub}
@@ -288,19 +362,23 @@ El código fuente de todas las visualizaciones se encuentra disponible en el sig
   \href{https://github.com/siroale/VisualizacionDeDatos-2026-01}{\texttt{https://github.com/siroale/VisualizacionDeDatos-2026-01}}
 \end{center}
 
-% TODO: Actualizar la estructura del repositorio con los archivos de la Tarea 2.
 \begin{verbatim}
 /
 |-- Code
 |   |-- Agente_IA
 |   |   |-- criterio_e_informe.md
 |   |   |-- criterio_e.py
+|   |   `-- treemap.py
 |   |-- Alexis-Mellis
 |   |   |-- barcode.py
-|   |   `-- streamgraph.py
+|   |   |-- streamgraph.py
+|   |   |-- waffle_chart.py
+|   |   `-- radar_chart.py
 |   `-- Andres-Aguila
 |       |-- dumbell.py
-|       `-- heatmap.py
+|       |-- heatmap.py
+|       |-- lollipop_divergente.py
+|       `-- nightingale_rose.py
 |-- Datasets
 |   |-- README.md
 |   |-- suicide_dataset.csv
