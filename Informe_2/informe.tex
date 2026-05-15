@@ -99,7 +99,7 @@
 
 El presente informe corresponde a la Tarea~2 del curso de Visualización de Datos y continúa el análisis del macrotema \textbf{Muerte}, con foco en las tasas de suicidio a nivel mundial. A diferencia de la primera entrega, en esta ocasión se incorpora una encuesta propia cuyo propósito es confrontar las percepciones populares con los indicadores que arroja la evidencia estadística.
 
-La encuesta fue diseñada en torno a cuatro dimensiones clave del fenómeno: la relación entre riqueza nacional y tasas de suicidio, el grupo etario de mayor riesgo, la proporción de mujeres en los suicidios globales y la evolución temporal de las tasas. Los resultados se contrastan con la realidad del dataset mediante visualizaciones no convencionales que ponen en evidencia la distancia entre lo que la gente cree y lo que los datos muestran.
+La encuesta fue diseñada en torno a cuatro dimensiones clave del fenómeno: la relación entre riqueza nacional y tasas de suicidio, el grupo etario de mayor riesgo, la proporción de mujeres en los suicidios globales y la evolución temporal de las tasas. Los resultados se contrastan con la realidad del dataset mediante visualizaciones que ponen en evidencia la distancia entre lo que la gente cree y lo que los datos muestran.
 
 % ─────────────────────────────────────────────────────────────────────────────
 \section{Encuesta}
@@ -111,14 +111,14 @@ Como continuación de la Tarea 1, se diseñó una encuesta orientada a explorar 
 El objetivo fue contrastar estas percepciones con los datos reales analizados en la entrega anterior,
 identificando sesgos y supuestos comunes. La encuesta fue creada con Google Forms y contó con
 4 preguntas de selección múltiple:
- 
+
 \begin{enumerate}
   \item \textbf{¿Cómo cree que se relaciona la tasa de suicidios con el nivel de riqueza general
         de un país?}
         \begin{itemize}[nosep]
           \item En esta pregunta los encuestados debian asignar una tasa de suicidio a cada nivel economico (bajo, medio y alto).
         \end{itemize}
- 
+
   \item \textbf{Según su conocimiento general, ¿cuál de estos grupos de edad tiende a tener
         la tasa de suicidios más alta?}
         \begin{itemize}[nosep]
@@ -129,13 +129,13 @@ identificando sesgos y supuestos comunes. La encuesta fue creada con Google Form
           \item Adultos mayores (55-74 años)
           \item Personas de la Tercera Edad (75+ años)
         \end{itemize}
- 
+
   \item \textbf{Si tuviera que estimar, ¿cuál es el porcentaje de población que representan
         las mujeres en el total de suicidios a nivel global?}
         \begin{itemize}[nosep]
           \item Esta pregunta se podia responder poniendo un número del 0 al 10 que representaba cada porcentaje.
         \end{itemize}
- 
+
   \item \textbf{Si analizamos los datos a lo largo de las décadas (ej. 1990 vs 2010), ¿cómo
         percibe el cambio en las tasas de suicidio a nivel mundial?}
         \begin{itemize}[nosep]
@@ -146,9 +146,9 @@ identificando sesgos y supuestos comunes. La encuesta fue creada con Google Form
           \item Han disminuido significativamente
         \end{itemize}
 \end{enumerate}
- 
+
 \subsection{Difusión y respuestas obtenidas}
- 
+
 La encuesta fue difundida entre conocidos de ambos integrantes
 a través de redes sociales. Se obtuvo un total de 20
 respuestas.
@@ -272,7 +272,7 @@ El Criterio~A complementa el análisis de género iniciado en la Tarea~1 con el 
 
 \subsection{Herramienta utilizada}
 
-Se utilizó \textbf{Gemini 3.1 Pro}. Una vez recibido el prompt, el agente desarrolló su propio código en Python y generó la visualización. A partir de esta, realizó su propio análisis y conclusiones. A modo de completitud, el código y el reporte generado por el modelo están disponibles en el repositorio.
+Se utilizó \textbf{Gemini 3.1 Pro}. Una vez recibido el prompt, el agente desarrolló su propio código en Python y generó la visualización. A modo de completitud, el código y el reporte generado por el modelo están disponibles en el repositorio.
 
 \subsection{Prompt utilizado}
 
@@ -363,29 +363,19 @@ No fue necesario realizar modificaciones sustanciales al código generado. El ag
 \subsubsection*{Conclusiones}
 
 \begin{itemize}
-  \item El Treemap revela que en ninguna de las cuatro preguntas la mayoría de los encuestados acertó. El porcentaje de acierto oscila entre el 0\% (grupo etario) y el 30\% (porcentaje de mujeres), lo que evidencia un desconocimiento sistemático sobre la realidad del suicidio a nivel global.
-  \item La pregunta con menor acierto es la del grupo etario más vulnerable (0\%): ningún encuestado identificó correctamente a las personas de 75+ años como el grupo de mayor tasa. La gradación de color funciona como un indicador visual inmediato de la magnitud del desconocimiento.
-  \item Esta visualización sintetiza el mensaje central del informe: las percepciones populares sobre el suicidio están sistemáticamente distorsionadas. La data cuenta una historia muy diferente a la que la gente cree, y las cuatro dimensiones analizadas convergen en esa misma conclusión.
+  \item En ninguna de las cuatro preguntas la mayoría de los encuestados acertó. El porcentaje de acierto oscila entre el 0\% (grupo etario) y el 30\% (porcentaje de mujeres).
+  \item La gradación de color permanece en tonos rojos y naranjas, sin llegar nunca al verde, lo que funciona como indicador visual inmediato de la magnitud del desconocimiento generalizado.
+  \item Las cuatro dimensiones analizadas convergen en una misma conclusión: las percepciones populares sobre el suicidio están sistemáticamente distorsionadas respecto de lo que los datos muestran.
 \end{itemize}
 
 % ─────────────────────────────────────────────────────────────────────────────
 \section{Conclusiones generales}
 
-A lo largo de este segundo análisis, la confrontación entre percepciones populares y datos reales ha puesto de manifiesto patrones consistentes de desinformación sobre el suicidio. Los cuatro ejes analizados muestran que las creencias de la población están sistemáticamente alejadas de lo que la evidencia estadística indica.
+Este segundo análisis confrontó las percepciones populares con la evidencia estadística del dataset y los resultados fueron consistentes en las cuatro dimensiones evaluadas: la gente cree que los países pobres se suicidan más, que los jóvenes son el grupo de mayor riesgo, que las mujeres representan cerca del 40\% de los casos y que las tasas han ido en aumento. Ninguna de estas creencias se sostiene frente a los datos.
 
-Los hallazgos más significativos son:
+Los países con mayor PIB per cápita lideran las tasas de suicidio, los mayores de 75 años constituyen el grupo de mayor incidencia (24/100k) sin que un solo encuestado lo identificara, las mujeres representan solo el 23\% de los suicidios globales y la tasa promedio ha disminuido un 7,4\% entre los 1980s y los 2010s. El Treemap de síntesis lo resume con claridad: el acierto máximo por pregunta fue del 30\% y el mínimo del 0\%.
 
-\begin{enumerate}
-  \item \textbf{La riqueza no protege:} La gente asume que los países pobres sufren más, pero los datos muestran que los países con mayor PIB per cápita registran tasas ligeramente superiores. Solo el 15\% de los encuestados percibió esto correctamente.
-
-  \item \textbf{El suicidio en la tercera edad es invisible:} Ningún encuestado identificó a los mayores de 75 años como el grupo de mayor riesgo, a pesar de que su tasa (24/100k) es la más alta del dataset. La cobertura mediática centrada en jóvenes distorsiona completamente la percepción.
-
-  \item \textbf{La brecha de género se subestima:} La gente cree que las mujeres representan aproximadamente el 40\% de los suicidios, cuando la cifra real es del 23\%. La brecha real es mucho mayor de lo que el público imagina.
-
-  \item \textbf{Las tasas han bajado, no subido:} La totalidad de los encuestados cree que las tasas han aumentado, cuando en realidad han disminuido un 7,4\% entre los 1980s y los 2010s. La mayor visibilización mediática del tema ha generado una percepción de crisis creciente que no se corresponde con la tendencia estadística global.
-\end{enumerate}
-
-Estos resultados subrayan la importancia de la visualización de datos como herramienta para combatir mitos y desinformación. La data no solo cuenta una historia diferente a la que la gente cree: la cuenta de una manera que puede cambiar percepciones cuando se presenta de forma clara y accesible.
+Estos hallazgos refuerzan lo documentado en la Tarea~1 y añaden una capa nueva: no solo importa qué dicen los datos, sino cuán lejos está la percepción pública de esa realidad. La visualización de datos, en este contexto, se revela como una herramienta eficaz para cerrar esa distancia.
 
 % ─────────────────────────────────────────────────────────────────────────────
 \section{Repositorio de GitHub}
