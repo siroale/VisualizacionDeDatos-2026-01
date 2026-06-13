@@ -1,0 +1,258 @@
+\documentclass[12pt, letterpaper]{article}
+
+% ── Paquetes ─────────────────────────────────────────────────────────────────
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{enumitem}
+\usepackage{parskip}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{csquotes}
+
+% ── Geometría ─────────────────────────────────────────────────────────────────
+\geometry{
+  top=2.5cm, bottom=2.5cm,
+  left=2.5cm, right=2.5cm
+}
+\setlength{\headheight}{13.6pt}
+
+% ── Hyperref ──────────────────────────────────────────────────────────────────
+\hypersetup{
+  colorlinks=true,
+  linkcolor=black,
+  urlcolor=blue!70!black,
+  citecolor=black
+}
+
+% ── Encabezado / pie de página ────────────────────────────────────────────────
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small Visualización de Datos -- Semestre I, 2026}
+\fancyhead[R]{\small Tarea 3}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+% ── Título de secciones ───────────────────────────────────────────────────────
+\titleformat{\section}{\large\bfseries}{}{0em}{\thesection.\quad}
+\titleformat{\subsection}{\normalsize\bfseries}{}{0em}{\thesubsection.\quad}
+
+% ─────────────────────────────────────────────────────────────────────────────
+\begin{document}
+
+% ── Portada ───────────────────────────────────────────────────────────────────
+\begin{titlepage}
+  \centering
+  \vspace*{1.5cm}
+
+  {\Large\bfseries Universidad Técnica Federico Santa María}\\[0.3cm]
+  {\large Departamento de Informática}\\[0.2cm]
+  {\large Visualización de Datos -- Semestre I, 2026}
+
+  \vspace{1.5cm}
+  \rule{\linewidth}{0.5pt}\\[0.4cm]
+  {\LARGE\bfseries Tarea 3: Mapas}\\[0.2cm]
+  {\large Macrotema: \textit{Muerte}}
+  \rule{\linewidth}{0.5pt}
+
+  \vspace{1.5cm}
+
+  \begin{tabular}{ll}
+    \textbf{Integrante 1:} & Alexis Mellis \\[0.2cm]
+    \textbf{Integrante 2:} & Andres Aguila \\
+  \end{tabular}
+
+  \vspace{1cm}
+
+  \begin{tabular}{ll}
+    \textbf{Profesores:}  & José Luis Martí Lara \\[0.2cm]
+    \textbf{Ayudantes:}   & Fernanda Araya Zárate \\
+                          & Carlos Arévalo Guajardo \\
+  \end{tabular}
+
+  \vfill
+
+\end{titlepage}
+
+% ── Índice ────────────────────────────────────────────────────────────────────
+\tableofcontents
+\newpage
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section{Introducción}
+
+El presente informe corresponde a la Tarea~3 del curso de Visualización de Datos, que
+continúa el análisis del macrotema \textbf{[Macrotema]}. En esta entrega se desarrollan
+visualizaciones basadas en mapas, cada una construida con una herramienta distinta y
+de tipo diferente, con el objetivo de responder preguntas concretas sobre los datos
+seleccionados. El informe documenta el proceso individual de cada integrante, las
+decisiones de diseño adoptadas y las conclusiones derivadas de cada mapa.
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section{Trabajo individual -- Integrante 1: [Nombre]}
+
+\subsection{Dataset seleccionado}
+
+% Descripción cualitativa del dataset: origen, variables relevantes, cobertura
+% geográfica/temporal, y por qué es adecuado para una visualización de mapa.
+
+\begin{itemize}
+  \item \textbf{Nombre del dataset:} [nombre]
+  \item \textbf{Fuente:} [URL o referencia]
+  \item \textbf{Variables relevantes:} [lista breve]
+  \item \textbf{Cobertura:} [países, período temporal, granularidad geográfica]
+  \item \textbf{Descripción cualitativa:} [2--3 oraciones describiendo qué contiene
+        el dataset y sus características principales]
+\end{itemize}
+
+\subsection{Objetivo de la visualización}
+
+\begin{itemize}
+  \item \textbf{Pregunta que busca responder:} [¿Qué pregunta responde el mapa?]
+  \item \textbf{Público objetivo:} [¿A quién está dirigido?]
+  \item \textbf{Acción o decisión que podría apoyar:} [¿Qué decisión informaría?]
+\end{itemize}
+
+\subsection{Tipo de mapa y herramienta}
+
+\begin{itemize}
+  \item \textbf{Tipo de mapa:} [Coropleta / Puntos / Burbujas / Flujo / Calor / otro]
+  \item \textbf{Herramienta:} [Flourish / Carto / Kepler.gl / Datawrapper / otra]
+  \item \textbf{Justificación del tipo:} [¿Por qué este tipo de mapa es el más adecuado
+        para la pregunta y los datos?]
+\end{itemize}
+
+\subsection{Esquemática utilizada}
+
+% Indique la lógica narrativa o estructural del mapa: ¿es descriptiva, secuencial,
+% relacional, narrativa, comparativa? ¿Cómo guía la atención del lector?
+
+[Ejemplo: ``El mapa sigue una esquemática descriptiva: muestra la distribución
+geográfica de un fenómeno sin establecer una secuencia temporal ni relaciones
+causales. El objetivo es permitir al lector identificar patrones espaciales de
+forma exploratoria...'']
+
+\subsection{Colores utilizados y justificación}
+
+% Mencione la paleta concreta y explique por qué se eligió en función de los datos
+% y del mensaje que se quiere transmitir.
+
+[Ejemplo: ``Se utilizó una escala secuencial de rojos (de claro a oscuro) para
+representar la intensidad creciente de la variable. El rojo refuerza la
+connotación de riesgo o urgencia asociada al macrotema, y la escala secuencial
+es adecuada para datos continuos sin un punto medio significativo...'']
+
+\subsection{Tipografía empleada}
+
+% Indique la fuente usada en el mapa (títulos, etiquetas, leyenda) y cómo aporta
+% coherencia al diseño general de la infografía.
+
+[Ejemplo: ``Se utilizó \textit{Inter} para títulos y etiquetas del mapa, coherente
+con la tipografía de la infografía grupal. Su diseño sans-serif garantiza
+legibilidad a distintas escalas y no compite visualmente con los elementos
+geográficos del mapa.'']
+
+\subsection{Mapa}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/figure001.png}
+  \caption{[Tipo de mapa]: [descripción del contenido]. Fuente: [fuente del dataset].}
+  \label{fig:mapa1}
+\end{figure}
+
+\subsection{Conclusiones}
+
+\begin{itemize}
+  \item [Conclusión 1: patrón o hallazgo principal visible en el mapa.]
+  \item [Conclusión 2: comparación geográfica relevante o anomalía destacable.]
+  \item [Conclusión 3: relación con el macrotema o implicancia para el público objetivo.]
+\end{itemize}
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section{Trabajo individual -- Integrante 2: [Nombre]}
+
+\subsection{Dataset seleccionado}
+
+\begin{itemize}
+  \item \textbf{Nombre del dataset:} [nombre]
+  \item \textbf{Fuente:} [URL o referencia]
+  \item \textbf{Variables relevantes:} [lista breve]
+  \item \textbf{Cobertura:} [países, período temporal, granularidad geográfica]
+  \item \textbf{Descripción cualitativa:} [2--3 oraciones describiendo el dataset]
+\end{itemize}
+
+\subsection{Objetivo de la visualización}
+
+\begin{itemize}
+  \item \textbf{Pregunta que busca responder:} [¿Qué pregunta responde el mapa?]
+  \item \textbf{Público objetivo:} [¿A quién está dirigido?]
+  \item \textbf{Acción o decisión que podría apoyar:} [¿Qué decisión informaría?]
+\end{itemize}
+
+\subsection{Tipo de mapa y herramienta}
+
+\begin{itemize}
+  \item \textbf{Tipo de mapa:} [Coropleta / Puntos / Burbujas / Flujo / Calor / otro]
+  \item \textbf{Herramienta:} [Flourish / Carto / Kepler.gl / Datawrapper / otra]
+  \item \textbf{Justificación del tipo:} [¿Por qué este tipo de mapa es el más adecuado?]
+\end{itemize}
+
+\subsection{Mapa}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{figures/figure001.png}
+  \caption{[Tipo de mapa]: [descripción del contenido]. Fuente: [fuente del dataset].}
+  \label{fig:mapa2}
+\end{figure}
+
+\subsection{Conclusiones}
+
+\begin{itemize}
+  \item [Conclusión 1.]
+  \item [Conclusión 2.]
+  \item [Conclusión 3.]
+\end{itemize}
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section{Conclusiones generales}
+
+[Párrafo integrando los hallazgos de los tres mapas en relación al macrotema.
+¿Qué historia cuentan los tres mapas en conjunto? ¿Qué patrones geográficos
+emergen? ¿Qué preguntas quedan abiertas para una próxima entrega?]
+
+% ─────────────────────────────────────────────────────────────────────────────
+\section{Repositorio de GitHub}
+
+El código fuente y los archivos de esta entrega se encuentran disponibles en:
+
+\begin{center}
+  \href{https://github.com/[usuario]/[repositorio]}{\texttt{https://github.com/[usuario]/[repositorio]}}
+\end{center}
+
+\begin{verbatim}
+/
+|-- Informe_3
+|   |-- figures/
+|   |   |-- infografia.png
+|   |   |-- mapa1.png
+|   |   `-- mapa2.png
+|   |-- informe.pdf
+|   `-- informe.tex
+`-- README.md
+\end{verbatim}
+
+% ─────────────────────────────────────────────────────────────────────────────
+
+\end{document}
