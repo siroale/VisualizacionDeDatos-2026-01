@@ -92,91 +92,121 @@
 \section{Introducción}
 
 El presente informe corresponde a la Tarea~3 del curso de Visualización de Datos, que
-continúa el análisis del macrotema \textbf{[Macrotema]}. En esta entrega se desarrollan
+continúa el análisis del macrotema \textbf{Muerte}. En esta entrega se desarrollan
 visualizaciones basadas en mapas, cada una construida con una herramienta distinta y
 de tipo diferente, con el objetivo de responder preguntas concretas sobre los datos
 seleccionados. El informe documenta el proceso individual de cada integrante, las
 decisiones de diseño adoptadas y las conclusiones derivadas de cada mapa.
 
 % ─────────────────────────────────────────────────────────────────────────────
-\section{Trabajo individual -- Integrante 1: [Nombre]}
+\section{Trabajo individual -- Integrante 1: Alexis Mellis}
 
 \subsection{Dataset seleccionado}
 
-% Descripción cualitativa del dataset: origen, variables relevantes, cobertura
-% geográfica/temporal, y por qué es adecuado para una visualización de mapa.
-
 \begin{itemize}
-  \item \textbf{Nombre del dataset:} [nombre]
-  \item \textbf{Fuente:} [URL o referencia]
-  \item \textbf{Variables relevantes:} [lista breve]
-  \item \textbf{Cobertura:} [países, período temporal, granularidad geográfica]
-  \item \textbf{Descripción cualitativa:} [2--3 oraciones describiendo qué contiene
-        el dataset y sus características principales]
+  \item \textbf{Nombre del dataset:} Suicide Rates Overview 1985 to 2016
+  \item \textbf{Fuente:} \href{https://www.kaggle.com/datasets/russellyates88/suicide-rates-overview-1985-to-2016}{Kaggle -- Russell Yates (2018)}
+  \item \textbf{Variables relevantes:} país, año, sexo, grupo etario, número de
+        suicidios, población, tasa por 100k habitantes, PIB per cápita, HDI
+  \item \textbf{Cobertura:} 101 países, período 1985--2016, granularidad anual por país
+  \item \textbf{Descripción cualitativa:} El dataset reúne estadísticas de suicidio
+        a nivel mundial desagregadas por sexo y grupo etario, combinadas con
+        indicadores socioeconómicos como el PIB per cápita y el HDI. Proviene de
+        fuentes como la OMS, el Banco Mundial y la ONU, lo que le otorga alta
+        confiabilidad. Su cobertura geográfica y temporal lo hace especialmente
+        adecuado para identificar patrones espaciales a escala global. Cabe señalar
+        que los países en blanco en el mapa no corresponden a ausencia del fenómeno,
+        sino a naciones sin registros confiables durante el período analizado,
+        lo que constituye una limitación estructural del dataset.
 \end{itemize}
 
 \subsection{Objetivo de la visualización}
 
 \begin{itemize}
-  \item \textbf{Pregunta que busca responder:} [¿Qué pregunta responde el mapa?]
-  \item \textbf{Público objetivo:} [¿A quién está dirigido?]
-  \item \textbf{Acción o decisión que podría apoyar:} [¿Qué decisión informaría?]
+  \item \textbf{Pregunta que busca responder:} ¿Qué países concentran las tasas
+        de suicidio más altas en el mundo durante el período 1985--2016, y existe
+        algún patrón geográfico en su distribución?
+  \item \textbf{Público objetivo:} Organismos de salud pública, investigadores
+        en salud mental y tomadores de decisiones en políticas de prevención del
+        suicidio a nivel nacional e internacional.
+  \item \textbf{Acción o decisión que podría apoyar:} Identificar regiones
+        prioritarias para la implementación de políticas de prevención y asignación
+        de recursos en salud mental, así como detectar patrones geográficos que
+        sugieran factores culturales, económicos o históricos asociados al fenómeno.
 \end{itemize}
 
 \subsection{Tipo de mapa y herramienta}
 
 \begin{itemize}
-  \item \textbf{Tipo de mapa:} [Coropleta / Puntos / Burbujas / Flujo / Calor / otro]
-  \item \textbf{Herramienta:} [Flourish / Carto / Kepler.gl / Datawrapper / otra]
-  \item \textbf{Justificación del tipo:} [¿Por qué este tipo de mapa es el más adecuado
-        para la pregunta y los datos?]
+  \item \textbf{Tipo de mapa:} Coropleta
+  \item \textbf{Herramienta:} Datawrapper
+  \item \textbf{Justificación del tipo:} El mapa coropleta es el más adecuado para
+        esta visualización porque la variable de interés,la tasa promedio de
+        suicidios, es continua, está agregada por país y busca mostrar diferencias
+        de intensidad entre unidades geográficas. Este tipo de mapa permite comparar simultáneamente todos los países
+        del mundo de forma intuitiva, facilitando la identificación de patrones
+        regionales sin sobrecargar visualmente al lector.
 \end{itemize}
 
 \subsection{Esquemática utilizada}
 
-% Indique la lógica narrativa o estructural del mapa: ¿es descriptiva, secuencial,
-% relacional, narrativa, comparativa? ¿Cómo guía la atención del lector?
-
-[Ejemplo: ``El mapa sigue una esquemática descriptiva: muestra la distribución
-geográfica de un fenómeno sin establecer una secuencia temporal ni relaciones
-causales. El objetivo es permitir al lector identificar patrones espaciales de
-forma exploratoria...'']
+El mapa sigue una esquemática \textbf{descriptiva}: muestra la distribución geográfica
+de la tasa promedio de suicidios sin establecer una secuencia temporal ni relaciones
+causales explícitas. La atención del lector es guiada naturalmente por la intensidad
+del color, siendo los países más oscuros (Europa del Este y Asia Central) los que
+concentran la mirada. La ausencia de labels de países reduce el ruido visual y
+traslada el protagonismo al patrón de color.
 
 \subsection{Colores utilizados y justificación}
 
-% Mencione la paleta concreta y explique por qué se eligió en función de los datos
-% y del mensaje que se quiere transmitir.
-
-[Ejemplo: ``Se utilizó una escala secuencial de rojos (de claro a oscuro) para
-representar la intensidad creciente de la variable. El rojo refuerza la
-connotación de riesgo o urgencia asociada al macrotema, y la escala secuencial
-es adecuada para datos continuos sin un punto medio significativo...'']
+Se utilizó una escala secuencial de blancos a rojos oscuros para representar la
+intensidad creciente de la tasa de suicidios. El rojo fue elegido deliberadamente
+por su connotación de alerta y urgencia, coherente con el macrotema de \textit{Muerte}.
+La escala secuencial es apropiada para datos continuos sin un punto medio
+significativo: no existe una tasa ``neutra'' de suicidios, por lo que una paleta
+divergente habría sido conceptualmente incorrecta. Los países sin datos se
+representan en gris, diferenciándolos claramente de los valores bajos sin generar
+confusión con la escala.
 
 \subsection{Tipografía empleada}
 
-% Indique la fuente usada en el mapa (títulos, etiquetas, leyenda) y cómo aporta
-% coherencia al diseño general de la infografía.
-
-[Ejemplo: ``Se utilizó \textit{Inter} para títulos y etiquetas del mapa, coherente
-con la tipografía de la infografía grupal. Su diseño sans-serif garantiza
-legibilidad a distintas escalas y no compite visualmente con los elementos
-geográficos del mapa.'']
+Datawrapper utiliza por defecto la familia tipográfica \textit{Roboto} para títulos,
+subtítulos y notas al pie, y \textit{Roboto Condensed} para etiquetas de leyenda.
+Ambas son fuentes sans-serif de alta legibilidad que no compiten visualmente con
+los elementos geográficos del mapa. El título se presenta en negrita para jerarquizar
+la información, mientras que la nota al pie en itálica refuerza su carácter
+secundario. Esta tipografía es coherente con el estilo limpio y periodístico
+que caracteriza a Datawrapper.
 
 \subsection{Mapa}
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=\textwidth]{figures/figure001.png}
-  \caption{[Tipo de mapa]: [descripción del contenido]. Fuente: [fuente del dataset].}
+  \includegraphics[width=\textwidth]{figures/mapa_violento.png}
+  \caption{Mapa coropleta: tasa promedio de suicidios por país (1985--2016),
+  expresada en suicidios por cada 100.000 habitantes. Fuente: Kaggle --
+  Suicide Rates Overview 1985--2016.}
   \label{fig:mapa1}
 \end{figure}
 
 \subsection{Conclusiones}
 
 \begin{itemize}
-  \item [Conclusión 1: patrón o hallazgo principal visible en el mapa.]
-  \item [Conclusión 2: comparación geográfica relevante o anomalía destacable.]
-  \item [Conclusión 3: relación con el macrotema o implicancia para el público objetivo.]
+  \item Europa del Este y Asia Central concentran las tasas más altas del mundo,
+        con Rusia y sus países vecinos superando los 30 suicidios por 100k habitantes
+        en promedio. Este patrón es consistente con la crisis socioeconómica y
+        el colapso institucional que siguió a la disolución de la Unión Soviética
+        en 1991, período que coincide con el inicio del dataset.
+  \item América Latina y África subsahariana presentan tasas comparativamente
+        bajas en los países con datos disponibles. Sin embargo, la amplia zona gris
+        en África y Asia revela una brecha significativa en la disponibilidad de
+        registros confiables, lo que impide obtener una imagen completa del fenómeno
+        a nivel global y sugiere que las cifras mundiales podrían estar subestimadas.
+  \item El patrón geográfico evidencia que las tasas de suicidio no se distribuyen
+        aleatoriamente, sino que siguen clusters regionales con factores históricos,
+        culturales y económicos compartidos. Esto refuerza la pertinencia del
+        macrotema \textit{Muerte} desde una perspectiva geopolítica y plantea la
+        necesidad de políticas de prevención diferenciadas por región.
 \end{itemize}
 
 % ─────────────────────────────────────────────────────────────────────────────
