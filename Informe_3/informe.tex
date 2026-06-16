@@ -209,80 +209,85 @@ que caracteriza a Datawrapper.
         necesidad de políticas de prevención diferenciadas por región.
 \end{itemize}
 
-% ─────────────────────────────────────────────────────────────────────────────
-\section{Trabajo individual -- Integrante 2: [Nombre]}
+
+\section{Trabajo individual -- Integrante 2: Andres Aguila}
 
 \subsection{Dataset seleccionado}
 
 \begin{itemize}
-  \item \textbf{Nombre del dataset:} [nombre]
-  \item \textbf{Fuente:} [URL o referencia]
-  \item \textbf{Variables relevantes:} [lista breve]
-  \item \textbf{Cobertura:} [países, período temporal, granularidad geográfica]
-  \item \textbf{Descripción cualitativa:} [2--3 oraciones describiendo el dataset]
+  \item \textbf{Nombre del dataset:} Suicide Rates Overview 1985 to 2016
+  \item \textbf{Fuente:} \url{https://www.kaggle.com/datasets/russellyates88/suicide-rates-overview-1985-to-2016}
+  \item \textbf{Variables relevantes:} \texttt{suicides/100k pop}, \texttt{gdp\_per\_capita (\$)}, \texttt{country}.
+  \item \textbf{Cobertura:} Global (más de 100 países), período 1985--2016.
+  \item \textbf{Descripción cualitativa:} El dataset cruza métricas de salud mental con indicadores macroeconómicos. Para esta visualización, los datos fueron agrupados por país para calcular la tasa estandarizada histórica y el PIB per cápita promedio.
 \end{itemize}
 
 \subsection{Objetivo de la visualización}
 
 \begin{itemize}
-  \item \textbf{Pregunta que busca responder:} [¿Qué pregunta responde el mapa?]
-  \item \textbf{Público objetivo:} [¿A quién está dirigido?]
-  \item \textbf{Acción o decisión que podría apoyar:} [¿Qué decisión informaría?]
-\end{itemize}
+  \item \textbf{Pregunta que busca responder:} ¿Existe una relación espacial y cuantitativa entre la riqueza material de un país (PIB) y su tasa de suicidios a nivel global?
+  \item \textbf{Público objetivo:} Investigadores de salud pública, sociólogos y formuladores de políticas públicas.
+  \item \textbf{Acción o decisión que podría apoyar:} Informar la asignación de recursos globales para prevención, evidenciando si el desarrollo económico actúa como factor protector.
+\end{itemize} 
 
 \subsection{Tipo de mapa y herramienta}
 
 \begin{itemize}
-  \item \textbf{Tipo de mapa:} [Coropleta / Puntos / Burbujas / Flujo / Calor / otro]
-  \item \textbf{Herramienta:} [Flourish / Carto / Kepler.gl / Datawrapper / otra]
-  \item \textbf{Justificación del tipo:} [¿Por qué este tipo de mapa es el más adecuado?]
+  \item \textbf{Tipo de mapa:} Mapa de Símbolos Proporcionales (Point map / Mapa de Burbujas).
+  \item \textbf{Herramienta:} Flourish Studio (Versión Web).
+  \item \textbf{Justificación del tipo:} El mapa bi-variable permite cruzar dos dimensiones en el espacio: el tamaño de la burbuja codifica la severidad (tasa de suicidios), y el color categoriza la riqueza (PIB). Esto revela correlaciones socioeconómicas sin perder el contexto geográfico.
 \end{itemize}
 
 \subsection{Mapa}
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=\textwidth]{figures/figure001.png}
-  \caption{[Tipo de mapa]: [descripción del contenido]. Fuente: [fuente del dataset].}
+  \includegraphics[width=\textwidth]{figures/mapa_bivariable.png}
+  \caption{Mapa de Símbolos Proporcionales: Tasa de Suicidios vs Nivel de Ingresos. Fuente: Kaggle -- Suicide Rates Overview.}
   \label{fig:mapa2}
 \end{figure}
 
 \subsection{Conclusiones}
 
 \begin{itemize}
-  \item [Conclusión 1.]
-  \item [Conclusión 2.]
-  \item [Conclusión 3.]
+  \item Naciones de Europa del Este, Europa Central y Asia Oriental presentan las burbujas más grandes (altas tasas de suicidio), estando mayoritariamente en rangos de ingresos medios a altos. Esto evidencia que la prosperidad económica a nivel macro no aísla a una población de las crisis de salud mental.
+  \item En contraste, gran parte de América Latina y naciones africanas documentadas muestran tasas significativamente menores a pesar de concentrarse en estratos de PIB más bajos. Esto sugiere la existencia de factores protectores socioculturales fuertes en estas regiones que superan las dificultades económicas.
+  \item La distribución geográfica refuerza que la mortalidad autoinfligida es un fenómeno multifactorial fuertemente asociado a sociedades industrializadas o en transición rápida, desmitificando la carencia de ingresos como su conductor principal absoluto.
 \end{itemize}
 
-% ─────────────────────────────────────────────────────────────────────────────
 \section{Conclusiones generales}
 
-[Párrafo integrando los hallazgos de los tres mapas en relación al macrotema.
-¿Qué historia cuentan los tres mapas en conjunto? ¿Qué patrones geográficos
-emergen? ¿Qué preguntas quedan abiertas para una próxima entrega?]
+En conjunto, las visualizaciones desarrolladas demuestran que la mortalidad autoinfligida es un fenómeno multifactorial que desafía la narrativa tradicional del subdesarrollo económico. Mientras que el mapa de coropletas expone una concentración crítica de altas tasas de suicidio en Europa del Este y Asia Central, el mapa de símbolos proporcionales añade una capa analítica al revelar que un PIB per cápita elevado no actúa como un escudo protector definitivo frente a crisis de salud mental. Por el contrario, la consolidación de clústeres geográficos en regiones como América Latina, donde prevalecen menores tasas de suicidio a pesar de una mayor adversidad material, subraya el peso fundamental de las estructuras socioculturales de contención. Esta dicotomía geopolítica cierra el análisis espacial de la presente entrega y deja abierta una interrogante clave para una futura investigación: ¿cuáles son los factores cualitativos, psicológicos y comunitarios específicos que logran proteger la vida humana en sociedades en vías de desarrollo y que parecen debilitarse en las naciones más prósperas?
 
-% ─────────────────────────────────────────────────────────────────────────────
 \section{Repositorio de GitHub}
 
 El código fuente y los archivos de esta entrega se encuentran disponibles en:
 
 \begin{center}
-  \href{https://github.com/[usuario]/[repositorio]}{\texttt{https://github.com/[usuario]/[repositorio]}}
+  \href{https://github.com/siroale/VisualizacionDeDatos-2026-01}{\texttt{https://github.com/siroale/VisualizacionDeDatos-2026-01}}
 \end{center}
 
 \begin{verbatim}
 /
+|-- Code/
+|-- Datasets
+|   |-- README.md
+|   |-- suicide_dataset.csv
+|   `-- encuesta.csv
+|-- Informe_1
+|   |-- figures/
+|   |-- informe.pdf
+|   `-- informe.tex
+|-- Informe_2
+|   |-- figures/
+|   |-- informe.pdf
+|   `-- informe.tex
 |-- Informe_3
 |   |-- figures/
-|   |   |-- infografia.png
-|   |   |-- mapa1.png
-|   |   `-- mapa2.png
 |   |-- informe.pdf
 |   `-- informe.tex
 `-- README.md
 \end{verbatim}
 
-% ─────────────────────────────────────────────────────────────────────────────
 
 \end{document}
