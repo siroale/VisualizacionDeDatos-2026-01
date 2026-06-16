@@ -216,7 +216,7 @@ que caracteriza a Datawrapper.
 
 \begin{itemize}
   \item \textbf{Nombre del dataset:} Suicide Rates Overview 1985 to 2016
-  \item \textbf{Fuente:} \url{https://www.kaggle.com/datasets/russellyates88/suicide-rates-overview-1985-to-2016}
+  \item \textbf{Fuente:} \href{https://www.kaggle.com/datasets/russellyates88/suicide-rates-overview-1985-to-2016}{Kaggle -- Russell Yates (2018)}
   \item \textbf{Variables relevantes:} \texttt{suicides/100k pop}, \texttt{gdp\_per\_capita (\$)}, \texttt{country}.
   \item \textbf{Cobertura:} Global (más de 100 países), período 1985--2016.
   \item \textbf{Descripción cualitativa:} El dataset cruza métricas de salud mental con indicadores macroeconómicos. Para esta visualización, los datos fueron agrupados por país para calcular la tasa estandarizada histórica y el PIB per cápita promedio.
@@ -238,6 +238,18 @@ que caracteriza a Datawrapper.
   \item \textbf{Justificación del tipo:} El mapa bi-variable permite cruzar dos dimensiones en el espacio: el tamaño de la burbuja codifica la severidad (tasa de suicidios), y el color categoriza la riqueza (PIB). Esto revela correlaciones socioeconómicas sin perder el contexto geográfico.
 \end{itemize}
 
+\subsection{Esquemática utilizada}
+
+El mapa sigue una esquemática relacional y comparativa. Geográficamente actúa de forma descriptiva al posicionar las burbujas sobre los centroides de cada país, pero analíticamente establece una narrativa de contraste al relacionar dos variables no espaciales (tamaño para la tasa de suicidios y color para la categoría de PIB). Esto guía la atención del lector no solo hacia ``dónde'' ocurre el problema, sino ``bajo qué contexto material''.
+
+\subsection{Colores utilizados y justificación}
+
+Se utilizó una codificación de color semántica para categorizar el PIB per cápita (Bajo, Medio, Alto). Esta decisión se justifica porque permite una rápida decodificación heurística al contrastar visualmente la ``alerta económica'' con la ``seguridad material'', evidenciando de inmediato de forma pre-atentiva si las grandes burbujas de suicidios caen paradójicamente en países considerados ricos, lo que refuerza el mensaje central del mapa.
+
+\subsection{Tipografía empleada}
+
+Se empleó la tipografía \textit{Canva Sans Variable} para las etiquetas, tooltips y la leyenda. Al ser una fuente sans-serif moderna y limpia, prioriza la legibilidad en pantalla para no recargar la visualización. Además, asegura una coherencia estricta con el diseño plano y directo empleado en la infografía final, evitando así que el texto compita visualmente con la alta densidad de información de las burbujas geográficas.
+
 \subsection{Mapa}
 
 \begin{figure}[H]
@@ -255,9 +267,6 @@ que caracteriza a Datawrapper.
   \item La distribución geográfica refuerza que la mortalidad autoinfligida es un fenómeno multifactorial fuertemente asociado a sociedades industrializadas o en transición rápida, desmitificando la carencia de ingresos como su conductor principal absoluto.
 \end{itemize}
 
-\section{Conclusiones generales}
-
-En conjunto, las visualizaciones desarrolladas demuestran que la mortalidad autoinfligida es un fenómeno multifactorial que desafía la narrativa tradicional del subdesarrollo económico. Mientras que el mapa de coropletas expone una concentración crítica de altas tasas de suicidio en Europa del Este y Asia Central, el mapa de símbolos proporcionales añade una capa analítica al revelar que un PIB per cápita elevado no actúa como un escudo protector definitivo frente a crisis de salud mental. Por el contrario, la consolidación de clústeres geográficos en regiones como América Latina, donde prevalecen menores tasas de suicidio a pesar de una mayor adversidad material, subraya el peso fundamental de las estructuras socioculturales de contención. Esta dicotomía geopolítica cierra el análisis espacial de la presente entrega y deja abierta una interrogante clave para una futura investigación: ¿cuáles son los factores cualitativos, psicológicos y comunitarios específicos que logran proteger la vida humana en sociedades en vías de desarrollo y que parecen debilitarse en las naciones más prósperas?
 
 \section{Repositorio de GitHub}
 
