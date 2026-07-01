@@ -4,8 +4,9 @@ import matplotlib.patches as FancyBboxPatch
 from matplotlib.path import Path
 import matplotlib.patches as mpatches
 import numpy as np
+import matplotlib.patheffects as pe
 
-df = pd.read_csv('/home/immergreen/github/VisualizacionDeDatos-2026-01/Datasets/suicide_dataset.csv')
+df = pd.read_csv('/home/andres/Documents/VisualizacionDeDatos-2026-01/Datasets/suicide_dataset.csv')
 
 region_map = {
     'Russian Federation': 'Europa del Este', 'Ukraine': 'Europa del Este',
@@ -77,13 +78,13 @@ sex_age = filtered.groupby(['sex', 'age'])['suicides_no'].sum().reset_index()
 grand_total = filtered['suicides_no'].sum()
 
 region_colors = {
-    'Europa del Este': '#E63946', 'Europa Occ.': '#457B9D',
-    'Latinoamerica': '#2A9D8F', 'Norteamerica': '#E9C46A', 'Asia-Pacifico': '#F4A261'
+    'Europa del Este': '#B8282A', 'Europa Occ.': '#C0C0C0',
+    'Latinoamerica': '#C0C0C0', 'Norteamerica': '#C0C0C0', 'Asia-Pacifico': '#C0C0C0'
 }
-sex_colors = {'male': '#1D3557', 'female': '#E07A5F'}
+sex_colors = {'male': '#1B263B', 'female': '#A0A0A0'}
 age_colors = {
-    '5-14 years': '#264653', '15-24 years': '#2A9D8F', '25-34 years': '#E9C46A',
-    '35-54 years': '#F4A261', '55-74 years': '#E76F51', '75+ years': '#C1121F'
+    '5-14 years': '#8A99A8', '15-24 years': '#8A99A8', '25-34 years': '#8A99A8',
+    '35-54 years': '#4A5568', '55-74 years': '#4A5568', '75+ years': '#4A5568'
 }
 
 def make_bezier(x0, y0_start, y0_end, x1, y1_start, y1_end, alpha=0.3, color='white'):
@@ -104,8 +105,8 @@ def make_bezier(x0, y0_start, y0_end, x1, y1_start, y1_end, alpha=0.3, color='wh
                                edgecolor='none', linewidth=0)
 
 fig, ax = plt.subplots(figsize=(16, 9))
-fig.patch.set_facecolor('#FFFFFF')
-ax.set_facecolor('#FFFFFF')
+fig.patch.set_facecolor('#FBFBF9')
+ax.set_facecolor('#FBFBF9')
 
 col_x = [0.08, 0.48, 0.88]
 bar_w = 0.06
@@ -139,12 +140,14 @@ def draw_column(ax, x, items, totals, colors_dict, label_func, usable, gap_count
         mid = cum + h / 2
         positions[item] = (cum, cum + h)
         if h > 0.025:
-            fs = 8 if len(lbl) > 12 else 9
+            fs = 13 if len(lbl) > 12 else 14
             ax.text(x, mid, lbl, ha='center', va='center', fontsize=fs,
-                    color='white', fontweight='bold', fontfamily='sans-serif', zorder=4)
+                    color='white', fontweight='bold', fontfamily='sans-serif', zorder=4,
+                    path_effects=[pe.withStroke(linewidth=2, foreground="black")])
             pct = totals[item] / grand_total * 100
             ax.text(x, cum + h + 0.003, f'{pct:.1f}%', ha='center', va='bottom',
-                    fontsize=7, color='#555555', fontfamily='sans-serif', zorder=4)
+                    fontsize=12, color='#333333', fontweight='bold', fontfamily='sans-serif', zorder=4,
+                    path_effects=[pe.withStroke(linewidth=1.5, foreground="white")])
         cum += h + gap
     return positions
 
@@ -195,22 +198,14 @@ for s in sexes:
         a_cum_in[a] += h_right
 
 for x, label in zip(col_x, ['Region', 'Sexo', 'Grupo Etario']):
-    ax.text(x, y_top + 0.035, label, ha='center', va='bottom', fontsize=13,
+    ax.text(x, y_top + 0.035, label, ha='center', va='bottom', fontsize=16,
             color='#333333', fontweight='bold', fontfamily='sans-serif')
-
-ax.set_title('Flujo de Suicidios Globales: Region, Sexo y Grupo Etario (1985-2015)',
-             fontsize=16, color='#1A1A1A', fontweight='bold', fontfamily='sans-serif',
-             pad=40, loc='center')
-
-ax.text(0.5, 0.005, 'Fuente: Kaggle - Suicide Rates Overview 1985-2016 | Total: {:,.0f} suicidios registrados'.format(grand_total),
-        transform=ax.transAxes, fontsize=9, color='#777777', ha='center',
-        fontfamily='sans-serif')
 
 ax.set_xlim(0, 1)
 ax.set_ylim(0, 1)
 ax.axis('off')
 
-plt.savefig('/home/immergreen/github/VisualizacionDeDatos-2026-01/Informe_TP/figures/vis5_sankey.png',
-            dpi=200, bbox_inches='tight', facecolor='#FFFFFF')
+plt.savefig('/home/andres/Documents/VisualizacionDeDatos-2026-01/infografia_TP/vis5_sankey.png',
+            dpi=200, bbox_inches='tight', facecolor='#FBFBF9')
 plt.close()
 print("Sankey diagram saved.")
